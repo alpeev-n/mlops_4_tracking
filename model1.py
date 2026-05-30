@@ -88,4 +88,8 @@ if __name__ == "__main__":
             np.savetxt(coef_path, logistic_regression_model.coef_, fmt="%.6f")
             mlflow.log_artifact(coef_path)
 
+            intercept_path = os.path.join(tmpdir, "intercept.txt")
+            np.savetxt(intercept_path, logistic_regression_model.intercept_, fmt="%.6f")
+            mlflow.log_artifact(intercept_path)
+
         test(logistic_regression_model, data["x_test"], data["y_test"])

@@ -82,4 +82,5 @@ if __name__ == "__main__":
 
         train(decision_tree_model, data["x_train"], data["y_train"])
         mlflow.log_param("n_leaves", decision_tree_model.get_n_leaves())
+        mlflow.log_param("depth", decision_tree_model.get_depth())
         test(decision_tree_model, data["x_test"], data["y_test"])
